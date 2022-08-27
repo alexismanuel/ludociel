@@ -32,7 +32,7 @@ const ContactForm = () => {
             if (json.success) {
                 setResponse({
                     type: 'success',
-                    message: 'Votre demande de contact a été envoyé avec succès.'
+                    message: 'Votre demande de contact a été envoyée avec succès.'
                 });
             } else {
                 setResponse({
