@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import ContactForm from '@components/ContactForm'
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="container">
       <Head>
@@ -15,4 +15,5 @@ export default function Home() {
       </main>
     </div>
   )
-}
+};
+export default Home;
