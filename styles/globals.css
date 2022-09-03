@@ -36,10 +36,15 @@ input, textarea {
   background-color: #E7E7E7;
   border: 1px;
   border-radius: 25px;
-  height: 4vh;
+  height: 45px;
   margin: inherit;
   padding: 10px;
-  width: 50vh;
+  width: 60vh;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #FF373A;
+  outline: none;
 }
 
 ::placeholder {
@@ -47,17 +52,22 @@ input, textarea {
 }
 
 textarea {
-  height: 10vh;
+  height: 100px;
 }
 
 button {
-  background-color: #FF373A;
+  background-color: #C60C30;
   border: 1px;
-  border-radius: 25px;
+  border-radius: 26px;
   color: #FFFFFF;
   font-weight: 600;
   padding: 10px;
-  width: 12vh;
+  width: 16vh;
+  font-size: 18px;
+}
+
+button:hover {
+  background-color: #FF373A;
 }
 
 label {

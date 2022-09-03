@@ -74,25 +74,52 @@ const ContactForm = () => {
                 <label htmlFor="name">
                     Votre nom / prénom
                 </label><br />
-                <input type="text" name="name" id="name" placeholder="Patoche Phil" onChange={handleChange}/>
+                <input 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    placeholder="Patoche Phil" 
+                    onChange={handleChange}
+                />
             </p>
             <p>
                 <label htmlFor="email">
                     Votre Email *
                 </label><br />
-                <input type="email" required="required" name="email" id="email" placeholder="example@domain.com" onChange={handleChange}/>
+                <input 
+                    type="email" 
+                    required
+                    aria-required="true"
+                    name="email" 
+                    id="email" 
+                    placeholder="example@domain.com" 
+                    onChange={handleChange}
+                />
             </p>
             <p>
                 <label htmlFor="subject">
                     Sujet du message *
                 </label><br />
-                <input type="text" name="subject" id="subject" onChange={handleChange}/>
+                <input 
+                    type="text"
+                    required
+                    aria-required="true"
+                    name="subject" 
+                    id="subject" 
+                    onChange={handleChange}
+                />
             </p>
             <p>
                 <label htmlFor="message">
                     Message *
                 </label><br />
-                <textarea required="required" name="message" id="message" onChange={handleChange}></textarea>
+                <textarea 
+                    required
+                    aria-required="true"
+                    name="message" 
+                    id="message" 
+                    onChange={handleChange}>
+                </textarea>
             </p>
             <p class="submit-section">
                 <button type="submit" class="submit">Envoyer</button>
