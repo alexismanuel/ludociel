@@ -38,6 +38,7 @@ input, textarea {
   border-radius: 25px;
   height: 45px;
   margin: inherit;
+  margin-bottom: 0px;
   padding: 10px;
   width: 60vh;
 }
@@ -68,6 +69,7 @@ button {
 
 button:hover {
   background-color: #C60C30;
+  cursor: pointer;
 }
 
 label {
@@ -78,6 +80,7 @@ label {
   align-items: center;
   display: flex;
   justify-content: center;
+  margin-top: 0px;
 }
 
 .is-hidden {
@@ -99,4 +102,15 @@ label {
 .notification.is-primary {
   background-color: #8cf25d;
   color: #fff;
+}
+
+.danger-required {
+  border: 1px solid #FF373A;
+  outline: none;
+}
+
+.error-info {
+  color: #FF373A;
+  font-size: 14px;
+  margin: 0px;
 }
