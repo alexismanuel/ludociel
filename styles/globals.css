@@ -57,7 +57,6 @@ textarea {
 }
 
 button {
-  background-color: #FF373A;
   border: 1px;
   border-radius: 26px;
   color: #FFFFFF;
@@ -67,7 +66,17 @@ button {
   font-size: 18px;
 }
 
-button:hover {
+.submit {
+  background-color: #FF373A;
+}
+
+.primary {
+  background-color: #197BFF;
+  border-radius: 4px;
+  width: 7vh;
+}
+
+.submit:hover {
   background-color: #C60C30;
   cursor: pointer;
 }
@@ -87,22 +96,6 @@ label {
   display: none;
 }
 
-.notification {
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
-  position: relative;
-}
-
-.notification.is-danger {
-  background-color: #ff3860;
-  color: #fff;
-}
-
-.notification.is-primary {
-  background-color: #8cf25d;
-  color: #fff;
-}
 
 .danger-required {
   border: 1px solid #FF373A;
@@ -113,4 +106,17 @@ label {
   color: #FF373A;
   font-size: 14px;
   margin: 0px;
+}
+
+.success-info p {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.primary-section {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
 }

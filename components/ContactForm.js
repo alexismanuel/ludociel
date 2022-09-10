@@ -67,6 +67,9 @@ const ContactForm = () => {
                 const json = await res.json();
     
                 if (json.success) {
+                    document.querySelector('form').classList.add('is-hidden');
+                    document.querySelector('form').reset()
+                    document.querySelector('.success-info').classList.remove('is-hidden');
                     setResponse({
                         type: 'success',
                         message: 'Votre demande de contact a été envoyée avec succès.'
@@ -86,89 +89,95 @@ const ContactForm = () => {
             }
         }
     };
+    const handleSuccessClick = e => {
+        document.querySelector('.success-info').classList.add('is-hidden');
+        document.querySelector('form').classList.remove('is-hidden');      
+    };
     return (
-        <form action="https://api.staticforms.xyz/submit" method="POST" onSubmit={handleSubmit}>
+        <div>
             <div
                 className={
                     response.type === 'success'
-                    ? 'tile box notification is-primary'
-                    : 'is-hidden'
+                    ? 'success-info'
+                    : 'success-info is-hidden'
                 }
             >
-                <p>{response.message}</p>
+                <p>Votre message a été envoyé !</p>
+                <div class="primary-section">
+                    <button 
+                        class="primary"
+                        onClick={handleSuccessClick}
+                    >
+                        OK
+                    </button>
+                </div>
             </div>
-            <div
-                className={
-                    response.type === 'error'
-                    ? 'tile box notification is-danger'
-                    : 'is-hidden'
-                }
-            >
-                <p>{response.message}</p>
-            </div>
-            <p class="heading">Contactez nous</p>
-            <input type="hidden" name="form-name" value="fc23d463-0701-4fbd-8007-3d559cc33e23" />
-            <p>
-                <label htmlFor="name">
-                    Votre nom / prénom
-                </label><br />
-                <input 
-                    type="text" 
-                    name="name" 
-                    id="name" 
-                    placeholder="Patoche Phil" 
-                    onChange={handleChange}
-                />
-            </p>
-            <p>
-                <label htmlFor="email">
-                    Votre Email *
-                </label><br />
-                <input 
-                    type="email" 
-                    aria-required="true"
-                    name="email" 
-                    id="email" 
-                    placeholder="example@domain.com"
-                    class="form-required"
-                    onChange={handleChange}
-                />
-                <span class="email-error error-info is-hidden"><br/>This field is required</span>
-            </p>
-            <p>
-                <label htmlFor="subject">
-                    Sujet du message *
-                </label><br />
-                <input 
-                    type="text"
-                    aria-required="true"
-                    name="subject" 
-                    id="subject"
-                    class="form-required"
-                    onChange={handleChange}
-                />
-                <span class="subject-error error-info is-hidden"><br/>This field is required</span>
-            </p>
-            <p>
-                <label htmlFor="message">
-                    Message *
-                </label><br />
-                <textarea 
-                    aria-required="true"
-                    name="message" 
-                    id="message" 
-                    class="form-required"
-                    onChange={handleChange}>
-                </textarea>
-                <span class="message-error error-info is-hidden"><br/>This field is required</span>
-            </p>
-            <p class="submit-section">
-                <button type="submit" class="submit">Envoyer</button>
-            </p>
-            <p class="global-error error-info is-hidden">
-                Please fill all the required fields
-            </p>
-        </form>
+            <form action="https://api.staticforms.xyz/submit" method="POST" onSubmit={handleSubmit}>
+                <p class="heading">Contactez nous</p>
+                <input type="hidden" name="form-name" value="fc23d463-0701-4fbd-8007-3d559cc33e23" />
+                <p>
+                    <label htmlFor="name">
+                        Votre nom / prénom
+                    </label><br />
+                    <input 
+                        type="text" 
+                        name="name" 
+                        id="name" 
+                        placeholder="Patoche Phil" 
+                        onChange={handleChange}
+                    />
+                </p>
+                <p>
+                    <label htmlFor="email">
+                        Votre Email *
+                    </label><br />
+                    <input 
+                        type="email" 
+                        aria-required="true"
+                        name="email" 
+                        id="email" 
+                        placeholder="example@domain.com"
+                        class="form-required"
+                        onChange={handleChange}
+                    />
+                    <span class="email-error error-info is-hidden"><br/>This field is required</span>
+                </p>
+                <p>
+                    <label htmlFor="subject">
+                        Sujet du message *
+                    </label><br />
+                    <input 
+                        type="text"
+                        aria-required="true"
+                        name="subject" 
+                        id="subject"
+                        class="form-required"
+                        onChange={handleChange}
+                    />
+                    <span class="subject-error error-info is-hidden"><br/>This field is required</span>
+                </p>
+                <p>
+                    <label htmlFor="message">
+                        Message *
+                    </label><br />
+                    <textarea 
+                        aria-required="true"
+                        name="message" 
+                        id="message" 
+                        class="form-required"
+                        onChange={handleChange}>
+                    </textarea>
+                    <span class="message-error error-info is-hidden"><br/>This field is required</span>
+                </p>
+                <p class="submit-section">
+                    <button type="submit" class="submit">Envoyer</button>
+                </p>
+                <p class="global-error error-info is-hidden">
+                    Please fill all the required fields
+                </p>
+            </form>
+        </div>
+        
     )
 };
 export default ContactForm;
